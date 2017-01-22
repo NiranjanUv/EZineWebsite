@@ -1,0 +1,54 @@
+<div ng-controller="OverViewController">
+	<a ui-sref="reports" class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a>
+	<h2>Overview <small>What all you can do here?</small></h2>
+	<div class="jumbotron" >
+		<div class="container">
+			<h2>Welcome!</h2>
+			A single place to maintain the subscribers information, update the subscribers information and many more ....<br /><br />
+			<p>
+				<button ng-click="toggleDetails()" class="btn btn-primary btn-lg btn-outline btn-rounded">
+				{{showDetails ? 'Hide Details' : 'Learn more' }}
+				</button>
+			</p>
+			<div class = "container" ng-show ="showDetails">
+				<p>Below operations can be performed in this App </p>
+				<div class="media">
+					<div class="media-left">
+						<span class="glyphicon glyphicon-plus"></span>
+						Add a Subscriber<br>
+						You can add new subscribers here !!!!						
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<span class="glyphicon glyphicon-minus"></span>
+						Remove a Subscriber<br>
+						You can remove existing subscribers here !!!!						
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<span class="glyphicon glyphicon-edit"></span>
+						Edit a Subscriber<br>
+						You can edit existing subscribers information here !!!!						
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<span class="glyphicon glyphicon-list-alt"></span>
+						List the Subscribers<br>
+						You can list down subscribers here !!!!						
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<span class="glyphicon glyphicon-stats"></span>
+						Statistics<br>
+						You can view stastics info here !!!!						
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</div>

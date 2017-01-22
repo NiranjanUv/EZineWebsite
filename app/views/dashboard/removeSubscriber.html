@@ -1,0 +1,47 @@
+<div ng-controller="RemoveSubscriberController">
+	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+	<h2>Remove a Subscriber <small>To remove existing subscriber</small></h2>
+	<span class="glyphicon glyphicon-dashboard bg-fade"></span>
+	
+
+	<form role="form" name="removeSubscriberForm" ng-submit="submitDetails()" novalidate>
+		<div class="form-group" ng-class="{ 'has-error has-feedback' : removeSubscriberForm.memId.$invalid && !removeSubscriberForm.memId.$pristine }" >
+			<div class="col-xs-10">
+				<br>
+				<label for="memId">Membership Number: </label>
+				<input type="number" class="form-control " id="memId" name="memId" placeholder="Enter the Membership ID"
+				ng-model="memberId" required>
+				<span ng-show="(removeSubscriberForm.memId.$invalid || removeSubscriberForm.memId.$error.required) && !removeSubscriberForm.memId.$pristine" class="help-block">Enter the Membership ID</span>
+				<br>
+
+				<button type="submit" class="btn btn-primary" ng-disabled="removeSubscriberForm.$invalid">Check</button>
+			</div>			
+		</div>
+	</form>
+
+		<div class="col-xs-10">
+				<br>
+				<label for="memId">The subscriber details are as below: </label>
+				<br>
+				<label>Membership Number: </label>
+				<p>{{subscriber._id}}</p>		
+				
+				<label>Subscriber Name: </label>
+				<p >{{subscriber.name}}</p>
+				
+				<label>Contact Number: </label>
+				<p >{{subscriber.conNum}}</p>
+				
+				<label>Subscriber Start Data: </label>
+				<p >{{subscriber.date}}</p>
+				
+				<label>Subscriber Period: </label>
+				<p >{{subscriber.subsnperiod}}</p>
+				
+				<label>Address: </label>
+				<p>{{subscriber.address}}</p>
+		</div>	
+	
+
+	
+</div>

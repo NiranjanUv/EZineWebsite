@@ -1,0 +1,69 @@
+<div class="container" ng-controller="AddSubscriberController">
+
+	<div class="col-xs-10">
+		<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+		<h2>Add a Subscriber <small>To add new subscriber</small></h2>
+		<span class="glyphicon glyphicon-dashboard bg-fade"></span>
+	</div>
+	
+	<form role="form" name="addSubscriberForm" ng-submit="submitDetails()" novalidate>
+		<div class="form-content">
+		<div class="form-group" ng-class="{ 'has-error has-feedback' : addSubscriberForm.memberName.$invalid && !addSubscriberForm.memberName.$pristine }" >
+
+			<div class="col-xs-10">
+				<br>
+				<label for="memberName">Subscriber Name: </label>
+				<input type="text" class="form-control " id="memberName" name="memberName" placeholder="Enter the name of subscriber"
+				ng-model="memberDetails.name" required>
+				
+				<span ng-show="(addSubscriberForm.memberName.$invalid || addSubscriberForm.memberName.$error.required) && !addSubscriberForm.memberName.$pristine" class="help-block">Enter the Name</span>
+			</div>
+			
+		</div>
+				
+		<div class="form-group" >
+			<div class="col-xs-4" ng-class="{ 'has-error' : addSubscriberForm.contactNum.$invalid && !addSubscriberForm.contactNum.$pristine }">
+				<br>
+				<label for="contactNum">Contact Number:</label>
+				<input type="tel" class="form-control" id="contactNum" name="contactNum" placeholder="Enter the contact number"
+				ng-model="memberDetails.conNum" required>
+				<span ng-show="(addSubscriberForm.contactNum.$invalid || addSubscriberForm.contactNum.$error.required) && !addSubscriberForm.contactNum.$pristine" class="help-block">Enter the Contact Number</span>
+			</div>
+		
+			<div class="col-xs-3" ng-class="{ 'has-error has-feedback' : addSubscriberForm.from.$invalid && !addSubscriberForm.from.$pristine }">
+				<br>
+				<label for="from">From:</label>
+				<input type="date" class="form-control" id="from" name="from" ng-model="memberDetails.date" required>
+				<span ng-show="(addSubscriberForm.from.$invalid || addSubscriberForm.from.$error.required) && !addSubscriberForm.from.$pristine" class="help-block">Enter the Contact Number</span>	
+			</div>
+			
+			<div class="col-xs-3" ng-class="{ 'has-error has-feedback' : addSubscriberForm.subperiod.$invalid && !addSubscriberForm.subperiod.$pristine }">
+				<br>
+				<label for="subperiod">Subscription Period:</label>
+				<input type="tel" class="form-control" id="subperiod" name="subperiod" placeholder="Enter the period in years"
+				ng-model="memberDetails.subsnperiod" required>
+				<span ng-show="(addSubscriberForm.subperiod.$invalid || addSubscriberForm.subperiod.$error.required) && !addSubscriberForm.subperiod.$pristine" class="help-block">Enter the number of years</span>			
+			</div>
+			
+		</div>
+		
+		<div class="form-group" ng-class="{ 'has-error' : addSubscriberForm.addrss.$invalid && !addSubscriberForm.addrss.$pristine }">
+			<div class="col-xs-10">
+				<br>
+				<label for="addrss">Address:</label>
+				<textarea rows="6" type="text" class="form-control" id="addrss" name="addrss" placeholder="Enter the Address here"
+				ng-model="memberDetails.address" required>	
+				</textarea>			
+				<span ng-show="(addSubscriberForm.addrss.$invalid || addSubscriberForm.addrss.$error.required) && !addSubscriberForm.addrss.$pristine" class="help-block">Enter the Address</span>				
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-xs-10">
+				<br>	
+				<button type="submit" class="btn btn-primary" ng-disabled="addSubscriberForm.$invalid">Submit</button>
+			</div>
+		</div>
+	</div>
+	</form>	
+</div>
