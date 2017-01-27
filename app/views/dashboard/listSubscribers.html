@@ -1,10 +1,23 @@
-<div>
+<div ng-controller="ListSubscriberController">
 	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
 	<h2>List Subscribers <small>To list subscribers in printable format</small></h2>
 	<span class="glyphicon glyphicon-dashboard bg-fade"></span>
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Display Subscribers</h1>
-		</div>
+	
+	<div class="table-responsive">
+		<table class="table" ng-repeat="sub in subscribers" ng-switch on="$index % 3">
+			
+
+				<tr ng-switch-when="0">
+					<td >{{subscribers[$index].name}}
+					<td>{{subscribers[$index+1].name}}
+					<td>{{subscribers[$index+2].name}}
+				</tr>	
+				<tr ng-switch-when="0">
+					<td>{{subscribers[$index].address}}
+					<td>{{subscribers[$index+1].address}}
+					<td>{{subscribers[$index+2].address}}
+				</tr>
+			
+		</table>
 	</div>
 </div>

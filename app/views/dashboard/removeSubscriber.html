@@ -4,7 +4,7 @@
 	<span class="glyphicon glyphicon-dashboard bg-fade"></span>
 	
 
-	<form role="form" name="removeSubscriberForm" ng-submit="submitDetails()" novalidate>
+	<form role="form" name="removeSubscriberForm" ng-submit="check()" novalidate>
 		<div class="form-group" ng-class="{ 'has-error has-feedback' : removeSubscriberForm.memId.$invalid && !removeSubscriberForm.memId.$pristine }" >
 			<div class="col-xs-10">
 				<br>
@@ -19,29 +19,47 @@
 		</div>
 	</form>
 
-		<div class="col-xs-10">
+	<div ng-show="showDetails">
+		<div class="col-xs-10" >
+			<br>
+			<label for="memId"><h3>The subscriber details are as below: </h3></label>
 				<br>
-				<label for="memId">The subscriber details are as below: </label>
-				<br>
-				<label>Membership Number: </label>
-				<p>{{subscriber._id}}</p>		
-				
-				<label>Subscriber Name: </label>
-				<p >{{subscriber.name}}</p>
-				
-				<label>Contact Number: </label>
-				<p >{{subscriber.conNum}}</p>
-				
-				<label>Subscriber Start Data: </label>
-				<p >{{subscriber.date}}</p>
-				
-				<label>Subscriber Period: </label>
-				<p >{{subscriber.subsnperiod}}</p>
-				
-				<label>Address: </label>
-				<p>{{subscriber.address}}</p>
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<td><b>Membership Number:</b></td>
+							<td>{{subscriber._id}}</td>
+						</tr>
+						<tr>
+							<td><b>Subscriber Name:</b></td>
+							<td>{{subscriber.name}}</td>
+						</tr>
+						<tr>
+							<td><b>Contact Number:</b></td>
+							<td>{{subscriber.conNum}}</td>
+						</tr>
+						<tr>
+							<td><b>Subscriber Start Data:</b></td>
+							<td>{{subscriber.date}}</td>
+						</tr>
+						<tr>
+							<td><b>Subscriber Period:</b></td>
+							<td>{{subscriber.subsnperiod}}</td>
+						</tr>
+						<tr>
+							<td><b>Address:</b></td>
+							<td>{{subscriber.address}}</td>
+						</tr>
+					</table>	
+				</div>		
 		</div>	
-	
 
+		<div class="col-md-10">
+			<br>
+			<p>Do you really want to delete this subscriber ?</p>
+			<button type="button" class="btn btn-success" ng-click="accept()">Yes</button>
+			<button type="button" class="btn btn-danger" ng-click="reject()">No</button>
+		</div>	
+	</div>
 	
 </div>

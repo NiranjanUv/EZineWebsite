@@ -56,12 +56,14 @@ angular
           .state('editSubscriber', {
             url: '/editSubscriber',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard/editSubscriber.html'
+            templateUrl: 'views/dashboard/editSubscriber.html',
+            controller: 'EditSubscriberController'
           })
           .state('listSubscribers', {
             url: '/listSubscribers',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard/listSubscribers.html'
+            templateUrl: 'views/dashboard/listSubscribers.html',
+            controller: 'ListSubscriberController'
           })
           .state('reports', {
             url: '/reports',
